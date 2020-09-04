@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<AppHeader />
-		<Nuxt />
+		<Nuxt :class="$style.root" />
 	</div>
 </template>
 
@@ -14,7 +14,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" module>
+@import '@/assets/styles/mixins.scss';
+
 html {
 	font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -38,36 +40,37 @@ ul,
 ol,
 li,
 a {
+	color: black;
 	text-decoration: none;
 	list-style: none;
 }
 
-.button--green {
-	display: inline-block;
-	border-radius: 4px;
-	border: 1px solid #3b8070;
-	color: #3b8070;
-	text-decoration: none;
-	padding: 10px 30px;
+button,
+input,
+select,
+textarea {
+	background-color: transparent; /* 1 */
+	border: 1px solid WindowFrame; /* 1 */
+	color: inherit; /* 1 */
+	font: inherit; /* 2 */
+	letter-spacing: inherit; /* 2 */
+	padding: 0.25em 0.375em; /* 1 */
 }
 
-.button--green:hover {
-	color: #fff;
-	background-color: #3b8070;
+button,
+input[type='submit'] {
+	padding: 8px 24px;
+	border-radius: 5px;
+	cursor: pointer;
+
+	&:hover {
+		// border-color: lightseagreen;
+		// color: lightseagreen;
+		@include shadow();
+	}
 }
 
-.button--grey {
-	display: inline-block;
-	border-radius: 4px;
-	border: 1px solid #35495e;
-	color: #35495e;
-	text-decoration: none;
-	padding: 10px 30px;
-	margin-left: 15px;
-}
-
-.button--grey:hover {
-	color: #fff;
-	background-color: #35495e;
+.root {
+	@include container();
 }
 </style>

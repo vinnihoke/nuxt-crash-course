@@ -1,12 +1,14 @@
 <template>
 	<div>
-		<div>
+		<div :class="$style.joke">
 			<h2>{{ joke }}</h2>
-			<hr />
-			<small>Joke ID: {{ $route.params.id }}</small>
+			<small :class="$style.jokeId"
+				>Joke ID: {{ $route.params.id }}</small
+			>
+			<button :class="$style.backButton" @click="$router.go(-1)">
+				Go Back
+			</button>
 		</div>
-
-		<div @click="$router.go(-1)">Go Back</div>
 	</div>
 </template>
 
@@ -36,3 +38,21 @@ export default {
 	},
 }
 </script>
+
+<style lang="scss" module>
+.joke {
+	padding: 32px 24px;
+
+	& > * {
+		margin: 16px 0;
+	}
+}
+
+.backButton {
+	display: block;
+}
+
+.jokeId {
+	color: gainsboro;
+}
+</style>

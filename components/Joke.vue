@@ -1,6 +1,6 @@
 <template>
 	<nuxt-link :to="`jokes/${id}`">
-		<div class="joke">
+		<div :class="$style.joke">
 			<p>{{ joke }}</p>
 		</div>
 	</nuxt-link>
@@ -13,10 +13,17 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
+@import '@/assets/styles/mixins.scss';
+
 .joke {
 	padding: 1rem;
-	border: 1px solid whitesmoke;
-	margin: 1rem;
+	border-radius: 5px;
+	border: 1px solid gainsboro;
+	margin: 1rem 0;
+
+	&:hover {
+		@include shadow();
+	}
 }
 </style>

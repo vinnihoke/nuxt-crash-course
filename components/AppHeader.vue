@@ -3,13 +3,14 @@
 		<h1 class="title">Dad Jokes</h1>
 		<ul>
 			<li>
-				<nuxt-link to="/">Home</nuxt-link>
+				<nuxt-link to="/jokes">
+					<button>Jokes</button>
+				</nuxt-link>
 			</li>
 			<li>
-				<nuxt-link to="/jokes">Jokes</nuxt-link>
-			</li>
-			<li>
-				<nuxt-link to="/about">About</nuxt-link>
+				<nuxt-link to="/about">
+					<button>About</button>
+				</nuxt-link>
 			</li>
 		</ul>
 	</header>
@@ -24,22 +25,17 @@ export default {}
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 1rem;
-	padding-bottom: 1rem;
 	border-bottom: 1px solid #ccc;
+	padding: 16px 24px;
 }
 .header .title {
-	font-size: 3rem;
+	font-size: 2rem;
 	color: darkslategrey;
 }
 .header ul {
 	display: flex;
 }
-.header a {
-	display: inline-block;
-	background: #333;
-	color: white;
-	padding: 0.3rem 1rem;
-	margin-right: 0.5rem;
+.header li {
+	margin: 0 16px;
 }
 </style>

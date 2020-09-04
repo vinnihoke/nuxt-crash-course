@@ -1,0 +1,9 @@
+@mixin container() {
+	padding: 0 24px;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+@mixin shadow() {
+	box-shadow: 0 2px 7px 3px whitesmoke;
+}
