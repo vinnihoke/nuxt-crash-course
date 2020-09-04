@@ -26,16 +26,15 @@ export default {}
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid #ccc;
-	padding: 16px 24px;
+	padding: 8px 16px;
 }
 .header .title {
-	font-size: 2rem;
-	color: darkslategrey;
+	font-size: 1.5rem;
 }
 .header ul {
 	display: flex;
 }
 .header li {
-	margin: 0 16px;
+	margin: 0 4px;
 }
 </style>
